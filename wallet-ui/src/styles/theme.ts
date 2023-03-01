@@ -42,6 +42,7 @@ const colors = {
   primaryDark: "#25253E",
   primaryBlue: "#3139CE",
   primaryLavanda: "#D6D7F5",
+
   primaryWhite: "#ffffff",
 
   secondaryLight: "#F4F6FB",
