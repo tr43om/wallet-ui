@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as HamIcon } from "assets/icons/navigation/hamburger.svg";
-
-import { ReactComponent as CrossIcon } from "assets/icons/navigation/cross.svg";
+import media from "styled-media-query";
 
 type HamProps = {
   isOpen: boolean;
@@ -10,13 +8,6 @@ type HamProps = {
 };
 const Hamburger = ({ isOpen, toggle }: HamProps) => {
   return (
-    // <span onClick={toggle}>
-    //   {isOpen ? (
-    //     <CrossIcon width={20} height={20} />
-    //   ) : (
-    //     <HamIcon width={20} height={20} />
-    //   )}
-    // </span>
     <StyledBurger $open={isOpen} onClick={toggle}>
       <div></div>
       <div></div>
@@ -26,8 +17,12 @@ const Hamburger = ({ isOpen, toggle }: HamProps) => {
 };
 
 const StyledBurger = styled.button<{ $open: boolean }>`
+  ${media.greaterThan("large")`
+  display: none;
+`}
   position: absolute;
-  top: 6px;
+  z-index: 999;
+  top: 1rem;
   left: 0;
   width: 1.25rem;
   gap: 4px;
@@ -35,7 +30,6 @@ const StyledBurger = styled.button<{ $open: boolean }>`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
 
   &:focus {
     outline: none;

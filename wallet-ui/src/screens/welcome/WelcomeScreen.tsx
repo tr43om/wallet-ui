@@ -2,20 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../../components";
 import { Navigation } from "./components";
-const Welcome = () => {
+import { Hero } from "./components";
+
+const WelcomeScreen = () => {
   return (
     <Root>
+      <Navigation />
       <Container>
-        <Navigation />
+        <Hero />
       </Container>
     </Root>
   );
 };
 
 const Root = styled.section`
+  padding-top: 1.75rem;
+
   background: ${({ theme }) => theme.colors.primaryDark};
   color: ${({ theme }) => theme.colors.primaryWhite};
-  min-height: 100vh;
 `;
 
-export default Welcome;
+export default WelcomeScreen;

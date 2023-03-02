@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 
 type ContainerProps = {
   children: ReactNode;
@@ -10,9 +11,12 @@ const Container = ({ children }: ContainerProps) => {
 };
 
 const Wrapper = styled.section`
-  padding-block: 1.75rem;
   padding-inline: 1rem;
   position: relative;
+
+  ${media.greaterThan("medium")`
+    padding-inline: 5rem;
+  `}
 `;
 
 export default Container;
