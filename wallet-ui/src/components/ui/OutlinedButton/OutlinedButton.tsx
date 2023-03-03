@@ -14,13 +14,17 @@ const Button = styled.button`
   all: unset;
   cursor: pointer;
   white-space: nowrap;
+  display: flex;
+  justify-content: center;
 
-  font: ${({ theme }) => theme.variants.body4};
+  font: ${({ theme }) => theme.variants.body3};
   border-radius: 4px;
   padding: 0.75rem 1.75rem;
   color: ${({ theme }) => theme.colors.primaryWhite};
   outline: 1px solid ${({ theme }) => theme.colors.primaryLavanda};
   ${media.greaterThan("medium")`
+  font: ${({ theme }) => theme.variants.body4};
+
     padding-inline: 2.2rem;
   `};
 

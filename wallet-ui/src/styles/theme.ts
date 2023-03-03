@@ -51,9 +51,10 @@ const colors = {
   secondaryHoverText: "#9B9B9B",
   secondaryInactiveText: "#E1E1E4",
 
+  grayExtraLight: "#f6f6f6",
   accent: "#f5332D",
 
-  background: "#f6f6f6",
+  background: "#ffffff",
 };
 
 const breakpoints = {

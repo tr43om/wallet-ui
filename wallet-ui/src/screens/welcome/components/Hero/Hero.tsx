@@ -23,7 +23,9 @@ const Hero = () => {
         </Description>
         <CTAContainer>
           <ButtonContainer>
-            <StyledGetItOnGooglePlayIcon />
+            <a href="#">
+              <StyledGetItOnGooglePlayIcon />
+            </a>
             <Stat>
               <RatingStat>
                 <p>4.6</p>
@@ -34,7 +36,9 @@ const Hero = () => {
           </ButtonContainer>
 
           <ButtonContainer>
-            <StyledGetItOnAppStoreIcon />
+            <a href="#">
+              <StyledGetItOnAppStoreIcon />
+            </a>
             <Stat>
               <RatingStat>
                 <p>4.6</p>

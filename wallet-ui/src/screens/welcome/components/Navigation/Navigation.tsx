@@ -123,17 +123,21 @@ const Menu = styled.ul<{ $opened: boolean }>`
 const MenuItem = styled.li<{ $isHidden?: boolean }>`
   text-align: center;
   font-size: 1.625rem;
+  cursor: pointer;
 
   ${media.greaterThan("large")`
-  display: ${(props) => {
-    // @ts-ignore
-    return props.$isHidden && "none";
-  }};
+    display: ${(props) => {
+      // @ts-ignore
+      return props.$isHidden && "none";
+    }};
 
     font: ${({ theme }) => theme.variants.body4};
     color: ${({ theme }) => theme.colors.secondaryHoverText};
     
-    
+    &:hover, &:focus {
+    color: ${({ theme }) => theme.colors.primaryWhite};
+    transition: color .3s;
+  }
   `}
 `;
 

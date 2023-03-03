@@ -12,9 +12,11 @@ const PrimaryButton = ({ title, ...props }: PrimaryButtonProps) => {
 
 const Button = styled.button`
   all: unset;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   white-space: nowrap;
-  font: ${({ theme }) => theme.variants.body4};
+  font: ${({ theme }) => theme.variants.body3};
   border-radius: 4px;
   padding: 0.75rem 1.75rem;
   background-color: ${({ theme }) => theme.colors.primaryBlue};
@@ -22,6 +24,8 @@ const Button = styled.button`
   transition: all 0.3s;
 
   ${media.greaterThan("medium")`
+  font: ${({ theme }) => theme.variants.body4};
+
     padding-inline: 2.2rem;
   `}
 
