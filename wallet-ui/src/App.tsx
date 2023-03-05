@@ -1,5 +1,5 @@
 import { ReactComponent as Logo } from "./assets/icons/other/logo.svg";
-import { WelcomeScreen, CryptoScreen } from "./screens";
+import { WelcomeScreen, CryptoScreen, Footer } from "./screens";
 import { Container } from "./components";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <>
       <WelcomeScreen />
       <CryptoScreen />
+      <Footer />
     </>
   );
 }

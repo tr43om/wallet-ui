@@ -18,6 +18,15 @@ import TRXIcon from "assets/icons/crypto/TRXIcon.svg";
 import USDTIcon from "assets/icons/crypto/USDT.svg";
 import XLMIcon from "assets/icons/crypto/XLMIcon.svg";
 
+import russianFlagIcon from "assets/icons/flags/russia.svg";
+
+import englandFlagIconfrom from "assets/icons/flags/england.svg";
+
+export const languages = [
+  { value: "english", label: "English", iconUrl: englandFlagIconfrom },
+  { value: "russian", label: "Russian", iconUrl: russianFlagIcon },
+];
+
 export const cryptos: Array<{ name: string; shortname: string; icon: string }> =
   [
     { name: "Bitcoin", shortname: "BTC", icon: BTCIcon },
