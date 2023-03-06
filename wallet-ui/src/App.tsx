@@ -4,7 +4,10 @@ import {
   BlogScreen,
   LocationScreen,
   ContactScreen,
+  Footer,
 } from "./screens";
+import { ReactComponent as Logo } from "./assets/icons/other/logo.svg";
+import { Container } from "./components";
 
 function App() {
   return (
@@ -16,6 +19,8 @@ function App() {
         <LocationScreen />
         <ContactScreen />
       </main>
+      <CryptoScreen />
+      <Footer />
     </>
   );
 }

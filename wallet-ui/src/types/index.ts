@@ -27,3 +27,9 @@ export type FAQType = {
   question: string;
   answer: string;
 };
+
+export type SelectOptionType = {
+  value: string;
+  label: string;
+  iconUrl: string;
+};

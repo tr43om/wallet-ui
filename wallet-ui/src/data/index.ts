@@ -204,3 +204,11 @@ export const faqs: FAQType[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
   },
 ];
+import russianFlagIcon from "assets/icons/flags/russia.svg";
+
+import englandFlagIconfrom from "assets/icons/flags/england.svg";
+
+export const languages = [
+  { value: "english", label: "English", iconUrl: englandFlagIconfrom },
+  { value: "russian", label: "Russian", iconUrl: russianFlagIcon },
+];
