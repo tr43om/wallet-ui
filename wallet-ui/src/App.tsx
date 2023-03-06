@@ -6,6 +6,7 @@ import {
   LocationScreen,
   ContactScreen,
   Footer,
+  FaqsScreen,
 } from "./screens";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <BlogScreen />
         <LocationScreen />
         <ContactScreen />
+        <FaqsScreen />
       </main>
       <Footer />
     </>

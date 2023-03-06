@@ -30,6 +30,13 @@ import russianFlagIcon from "assets/icons/flags/russia.svg";
 
 import englandFlagIconfrom from "assets/icons/flags/england.svg";
 
+import LiquidityIcon from "assets/icons/faq/liquidity.svg";
+import LegalIcon from "assets/icons/faq/legal.svg";
+import RoadmapIcon from "assets/icons/faq/roadmap.svg";
+import SecurityIcon from "assets/icons/faq/security.svg";
+import StatusMigrationIcon from "assets/icons/faq/status-migration.svg";
+import TeamIcon from "assets/icons/faq/team.svg";
+
 import { CryptoType, BlogType, LocationType, MemberType, FAQType } from "types";
 
 export const cryptos: CryptoType[] = [
@@ -181,31 +188,38 @@ export const faqs: FAQType[] = [
     question: "Liquidity",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: LiquidityIcon,
   },
+
   {
     question: "Status Migration",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: StatusMigrationIcon,
   },
   {
     question: "Team",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: TeamIcon,
   },
   {
     question: "Roadmap",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: RoadmapIcon,
   },
   {
     question: "Legal",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: LegalIcon,
   },
   {
     question: "Security",
     answer:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
+    iconUrl: SecurityIcon,
   },
 ];
 

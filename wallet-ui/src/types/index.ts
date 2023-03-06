@@ -26,6 +26,7 @@ export type MemberType = {
 export type FAQType = {
   question: string;
   answer: string;
+  iconUrl: string;
 };
 
 export type SelectOptionType = {
