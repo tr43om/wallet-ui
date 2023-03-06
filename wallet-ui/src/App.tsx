@@ -6,8 +6,6 @@ import {
   ContactScreen,
   Footer,
 } from "./screens";
-import { ReactComponent as Logo } from "./assets/icons/other/logo.svg";
-import { Container } from "./components";
 
 function App() {
   return (
@@ -20,6 +18,7 @@ function App() {
         <ContactScreen />
       </main>
       <CryptoScreen />
+
       <Footer />
     </>
   );
