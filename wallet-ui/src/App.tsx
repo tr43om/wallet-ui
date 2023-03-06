@@ -1,3 +1,4 @@
+import { ContactForm } from "components/ContactForm";
 import {
   WelcomeScreen,
   CryptoScreen,
@@ -17,8 +18,6 @@ function App() {
         <LocationScreen />
         <ContactScreen />
       </main>
-      <CryptoScreen />
-
       <Footer />
     </>
   );

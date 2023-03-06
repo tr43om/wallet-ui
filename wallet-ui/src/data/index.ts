@@ -26,6 +26,10 @@ import authorAvatar1 from "assets/photos/avatar-1.webp";
 import member1 from "assets/photos/monkeyman.webp";
 import member2 from "assets/photos/tamara.webp";
 
+import russianFlagIcon from "assets/icons/flags/russia.svg";
+
+import englandFlagIconfrom from "assets/icons/flags/england.svg";
+
 import { CryptoType, BlogType, LocationType, MemberType, FAQType } from "types";
 
 export const cryptos: CryptoType[] = [
@@ -204,9 +208,6 @@ export const faqs: FAQType[] = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta ipsam repellendus voluptas voluptate dolores rerum aspernatur itaque totam exercitationem architecto sequi eum est, eaque perferendis pariatur error illo reiciendis saepe.",
   },
 ];
-import russianFlagIcon from "assets/icons/flags/russia.svg";
-
-import englandFlagIconfrom from "assets/icons/flags/england.svg";
 
 export const languages = [
   { value: "english", label: "English", iconUrl: englandFlagIconfrom },

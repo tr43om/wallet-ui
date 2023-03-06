@@ -1,28 +1,44 @@
 import React, { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
+import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
+import { Error } from "../Error";
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
-  error?: boolean;
+  name: string;
 }
 const TextArea = ({
   label,
-  maxLength,
   value,
-  error,
+  name,
+  maxLength,
   ...props
 }: TextAreaProps) => {
+  const {
+    register,
+    formState: { errors },
+    watch,
+  } = useFormContext();
+  const isError = Boolean(errors[name]?.message);
+  const errorMessage = errors[name]?.message;
+  const message: string = watch(name) || "";
+
   return (
     <Root>
       <Header>
         <Label>{label}</Label>
 
         <Counter>
-          {value?.toString().length} / {maxLength}
+          {message.length || 0} / {maxLength}
         </Counter>
       </Header>
 
-      <StyledTextArea $error={false} value={value} {...props} />
+      <StyledTextArea
+        $error={isError}
+        {...props}
+        {...register("message", { maxLength })}
+      />
+      <Error text={errorMessage as string} $mt={10} />
     </Root>
   );
 };
@@ -30,7 +46,6 @@ const TextArea = ({
 const Root = styled.label`
   display: grid;
   width: 100%;
-  max-width: 10rem;
 `;
 
 const Header = styled.div`
@@ -45,11 +60,14 @@ const Counter = styled.p`
 const StyledTextArea = styled.textarea<{
   $error: boolean;
 }>`
+  min-height: 6rem;
+  font: inherit;
   resize: none;
   outline: none;
   color: ${({ theme }) => theme.colors.primaryDark};
   padding: 13px 16px;
   border-radius: 4px;
+  background: #f7f7f7;
   transition: all 0.3s;
   caret-color: ${({ theme }) => theme.colors.primaryBlue};
   border: 1px solid
@@ -61,12 +79,13 @@ const StyledTextArea = styled.textarea<{
       }
     }};
   &::placeholder {
-    color: #f7f7f7;
+    color: #9b9b9b;
   }
 
   &:focus,
   &:hover {
-    border-color: ${({ theme }) => theme.colors.primaryBlue};
+    border-color: ${({ theme, $error }) =>
+      !$error ? theme.colors.primaryBlue : theme.colors.accent};
   }
 `;
 

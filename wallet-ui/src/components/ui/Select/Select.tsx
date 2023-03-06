@@ -4,20 +4,21 @@ import { ReactComponent as ChevronTopIcon } from "assets/icons/other/chevron-top
 
 import { ReactComponent as CheckIcon } from "assets/icons/other/check.svg";
 import { SelectOptionType } from "types";
+import { useFormContext } from "react-hook-form";
 
-type SelectProps = {
-  selected: SelectOptionType;
+type SelectProps<T> = {
+  selected: T;
   isLight?: boolean;
-  options: SelectOptionType[];
-  chooseOption: (option: SelectOptionType) => void;
+  options: T[];
+  chooseOption: (option: T) => void;
 };
 
-const Select = ({
+const Select = <T extends SelectOptionType>({
   selected,
   options,
   chooseOption,
   isLight = false,
-}: SelectProps) => {
+}: SelectProps<T>) => {
   const [opened, setOpened] = useState(false);
 
   const toggle = () => setOpened((op) => !op);
@@ -31,8 +32,8 @@ const Select = ({
         $isLight={isLight}
       >
         <Box>
-          <Icon src={selected.iconUrl} />
-          <Label>{selected.label}</Label>
+          <Icon src={selected.iconUrl || ""} />
+          <Label>{selected.label || ""}</Label>
           <StyledChevronIcon $opened={opened} />
         </Box>
 
@@ -78,7 +79,8 @@ const Options = styled.ul`
 
   border-radius: 4px;
   background: #515165;
-  overflow: hidden;
+  overflow-x: hidden;
+  max-height: 200px;
 `;
 
 const Option = styled.li`
@@ -104,7 +106,7 @@ const StyledSelect = styled.div<{ $isLight: boolean }>`
         color: ${theme.colors.primaryDark};
 
         & > ${Box}, & > ${Options} {
-            background-color: #fff;
+            background: #f7f7f7;
         }
 
          & > ${Box} > svg > path {
@@ -131,6 +133,10 @@ const Label = styled.p``;
 
 const Icon = styled.img`
   margin-right: 6px;
+  width: 14px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
 `;
 
 const Root = styled.label`

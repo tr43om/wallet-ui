@@ -7,8 +7,8 @@ import media from "styled-media-query";
 const MembersList = () => {
   return (
     <List>
-      {members.map((member) => (
-        <MemberCard member={member} />
+      {members.map((member, i) => (
+        <MemberCard member={member} isTitleAbove={i % 2 !== 0} />
       ))}
     </List>
   );
@@ -16,17 +16,14 @@ const MembersList = () => {
 
 const List = styled.ul`
   all: unset;
+  margin: 0 auto;
   display: grid;
-  gap: 2.5rem;
+  gap: 10.5rem;
 
   ${media.greaterThan("large")`
     display: flex;
-    gap: 4.375rem;
+    margin: 0;
   `}
-`;
-
-const Member = styled.li`
-  all: unset;
 `;
 
 export default MembersList;

@@ -1,22 +1,44 @@
 import { Container } from "components";
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import media from "styled-media-query";
 import { MembersList } from "./components";
+import { ContactForm } from "components/ContactForm";
+import { useMediaQuery } from "react-responsive";
 
 const ContactScreen = () => {
+  const { devices } = useTheme();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   return (
     <Container>
       <Root>
-        <Title>Contact us</Title>
-        <MembersList />
+        {!isDesktop && <Title>Contact us</Title>}
+        <Content>
+          <MembersList />
+          <ContactForm />
+        </Content>
       </Root>
     </Container>
   );
 };
 
 const Root = styled.div`
-  min-height: 100vh;
+  margin-bottom: 3rem;
+
+  ${media.greaterThan("large")`
+    margin-bottom: 6.6875rem;
+  `}
+`;
+
+const Content = styled.div`
+  display: grid;
+  gap: 3rem;
+  ${media.greaterThan("large")`
+    display: flex;
+    justify-content: space-between;
+  `}
 `;
 
 const Title = styled.h2`

@@ -39,6 +39,12 @@ const Button = styled.button`
   color: ${({ theme }) => theme.colors.primaryBlue};
   transition: all 0.3s;
 
+  &:disabled {
+    color: ${({ theme }) => theme.colors.secondaryPressed};
+
+    background: red;
+  }
+
   ${media.greaterThan("medium")`
   font: ${({ theme }) => theme.variants.body4};
 
