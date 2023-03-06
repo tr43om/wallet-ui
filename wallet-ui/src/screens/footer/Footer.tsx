@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ReactComponent as FacebookIcon } from "assets/icons/socials/facebook.svg";
 import { ReactComponent as InstagramIcon } from "assets/icons/socials/instagram.svg";
 import { ReactComponent as TwitterIcon } from "assets/icons/socials/twitter.svg";
@@ -20,9 +20,19 @@ import { languages } from "data";
 import media from "styled-media-query";
 
 import { SelectOptionType } from "types";
+import { useMediaQuery } from "react-responsive";
 
 const Footer = () => {
   const [language, setLanguage] = useState(languages[0]);
+
+  const { devices } = useTheme();
+  const isTabletOrMobile = useMediaQuery({
+    query: devices.tabletAndBelow,
+  });
+
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
 
   const changeLanguage = (option: SelectOptionType) => setLanguage(option);
   return (
@@ -50,14 +60,45 @@ const Footer = () => {
             </MenuList>
           </MenuContainer>
 
-          <ContactContainer>
-            <Title>Need help?</Title>
+          {isTabletOrMobile && (
+            <ContactContainer>
+              <Title>Need help?</Title>
 
-            <ContactFounderContainer>
-              <FounderWrapper>
-                <Avatar src={founder} alt="founder" width={48} height={48} />
+              <ContactFounderContainer>
+                <FounderWrapper>
+                  <Avatar src={founder} alt="founder" width={48} height={48} />
+                  <FounderInfo>
+                    <FounderName>Allison Carder</FounderName>
+                    <FounderSocialsContainer>
+                      <FounderSocialsItem>
+                        <TelegramIcon />
+                      </FounderSocialsItem>
+                      <FounderSocialsItem>
+                        <EmailIcon />
+                      </FounderSocialsItem>
+                    </FounderSocialsContainer>
+                  </FounderInfo>
+                </FounderWrapper>
+
+                <OtherContactsContainer>
+                  <OtherContactItem>
+                    <AtIcon />
+                    <p>Allison_Carder_@mail.com</p>
+                  </OtherContactItem>
+                  <OtherContactItem>
+                    <PhoneIcon />
+                    <p>+ 7 (900) 000 0000</p>
+                  </OtherContactItem>
+                </OtherContactsContainer>
+              </ContactFounderContainer>
+            </ContactContainer>
+          )}
+          {isDesktop && (
+            <ContactContainerDesktop>
+              <Title>24/7 Support</Title>
+              <ContactContainerDesktopWrapper>
                 <FounderInfo>
-                  <FounderName>Allison Carder</FounderName>
+                  <FounderName>Write to us</FounderName>
                   <FounderSocialsContainer>
                     <FounderSocialsItem>
                       <TelegramIcon />
@@ -67,47 +108,20 @@ const Footer = () => {
                     </FounderSocialsItem>
                   </FounderSocialsContainer>
                 </FounderInfo>
-              </FounderWrapper>
 
-              <OtherContactsContainer>
-                <OtherContactItem>
-                  <AtIcon />
-                  <p>Allison_Carder_@mail.com</p>
-                </OtherContactItem>
-                <OtherContactItem>
-                  <PhoneIcon />
-                  <p>+ 7 (900) 000 0000</p>
-                </OtherContactItem>
-              </OtherContactsContainer>
-            </ContactFounderContainer>
-          </ContactContainer>
-          <ContactContainerDesktop>
-            <Title>24/7 Support</Title>
-            <ContactContainerDesktopWrapper>
-              <FounderInfo>
-                <FounderName>Write to us</FounderName>
-                <FounderSocialsContainer>
-                  <FounderSocialsItem>
-                    <TelegramIcon />
-                  </FounderSocialsItem>
-                  <FounderSocialsItem>
-                    <EmailIcon />
-                  </FounderSocialsItem>
-                </FounderSocialsContainer>
-              </FounderInfo>
-
-              <OtherContactsContainer>
-                <OtherContactItem>
-                  <AtIcon />
-                  <p>Allison_Carder_@mail.com</p>
-                </OtherContactItem>
-                <OtherContactItem>
-                  <PhoneIcon />
-                  <p>+ 7 (900) 000 0000</p>
-                </OtherContactItem>
-              </OtherContactsContainer>
-            </ContactContainerDesktopWrapper>
-          </ContactContainerDesktop>
+                <OtherContactsContainer>
+                  <OtherContactItem>
+                    <AtIcon />
+                    <p>Allison_Carder_@mail.com</p>
+                  </OtherContactItem>
+                  <OtherContactItem>
+                    <PhoneIcon />
+                    <p>+ 7 (900) 000 0000</p>
+                  </OtherContactItem>
+                </OtherContactsContainer>
+              </ContactContainerDesktopWrapper>
+            </ContactContainerDesktop>
+          )}
           <LanguageContainer>
             <Title $align="left">Language</Title>
             <Select
