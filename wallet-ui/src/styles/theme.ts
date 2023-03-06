@@ -62,9 +62,8 @@ const breakpoints = {
   mobileM: "375",
   mobileL: "425",
   tablet: "768",
-  laptop: "1024",
-  laptopL: "1440",
-  desktop: "2560",
+  laptop: "1124",
+  desktop: "1400",
 };
 
 const devices = {

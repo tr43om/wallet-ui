@@ -1,11 +1,15 @@
 import { Container } from "components";
 import React, { useState } from "react";
-import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
+import styled, { useTheme } from "styled-components";
 import media from "styled-media-query";
 import { CryptoList, ExpandButton } from "./components";
 
 const CryptoScreen = () => {
-  const isDesktop = window.matchMedia("(min-width: 1170px)").matches;
+  const { devices } = useTheme();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [expanded, setExpanded] = useState(isDesktop);
 
   const expandList = () => setExpanded((open) => !open);

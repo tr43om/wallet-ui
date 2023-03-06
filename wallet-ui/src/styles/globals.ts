@@ -21,6 +21,8 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   background-color: ${({ theme: { colors } }) => colors.background};
+  color: ${({ theme: { colors } }) => colors.primaryDark};
+
 }
 
 `;

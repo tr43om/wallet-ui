@@ -1,12 +1,21 @@
-import { ReactComponent as Logo } from "./assets/icons/other/logo.svg";
-import { WelcomeScreen, CryptoScreen } from "./screens";
-import { Container } from "./components";
+import {
+  WelcomeScreen,
+  CryptoScreen,
+  BlogScreen,
+  LocationScreen,
+  ContactScreen,
+} from "./screens";
 
 function App() {
   return (
     <>
       <WelcomeScreen />
-      <CryptoScreen />
+      <main>
+        <CryptoScreen />
+        <BlogScreen />
+        <LocationScreen />
+        <ContactScreen />
+      </main>
     </>
   );
 }

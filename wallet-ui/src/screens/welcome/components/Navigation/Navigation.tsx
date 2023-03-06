@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Hamburger } from "../Hamburger";
 import { ReactComponent as Logo } from "assets/icons/other/logo.svg";
 import { OutlinedButton, PrimaryButton } from "components/ui";
@@ -8,6 +8,7 @@ import { Container } from "components";
 
 const Navigation = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+
   return (
     <Wrapper>
       <Container>
